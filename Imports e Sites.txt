@@ -1,0 +1,6 @@
+EXTENSÃO PARA CSS NO REACT
+
+EXTENSÃO NO VSCODE: 
+vscode-styled-components
+IMPORT:
+import styled from "styled-components";
