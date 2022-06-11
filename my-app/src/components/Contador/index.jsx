@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Container } from "../../Styles"; // import da classe Styles.jsx
 import { BotaoAumentar, BotaoDiminuir, BotaoZerar, Titulo } from "./Styles";
 import { MensagemErro } from "./Styles";
-import { Mensagem } from "./Styles";
+
 
 const Contador = () => {
   //começa com use é HULK
