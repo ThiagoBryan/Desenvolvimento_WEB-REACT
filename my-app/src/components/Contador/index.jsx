@@ -46,8 +46,11 @@ const Contador = () => {
     </Container>
   );
 };
+//PROP Parametros dos Componentes React
 const Texto = ({ valor }) => {
   return <span>{valor}</span>;
 };
 
 export default Contador;
+
+
