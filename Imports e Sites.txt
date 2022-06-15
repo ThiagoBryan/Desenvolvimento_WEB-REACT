@@ -1,6 +1,27 @@
 EXTENSÃO PARA CSS NO REACT
-
 EXTENSÃO NO VSCODE: 
 vscode-styled-components
 IMPORT:
 import styled from "styled-components";
+======================================================
+SITE Material UI:
+https://mui.com/pt/
+https://mui.com/pt/system/spacing/
+INSTALAR BIBLIOTECA Material UI:
+yarn add @mui/material @emotion/react @emotion/styled
+==================================================================
+SITE React Router: PARA NAVEGAR EM DIFERENTES URLS /HOST/
+https://reactrouter.com/docs/en/v6/getting-started/installation
+
+INSTALAR BIBLIOTECA React Router:
+yarn add react-router-dom@6
+==============================================================
+BIBLIOTECA DE ICONES:
+yarn add @mui/icons-material
+=========================================================
+SITE AXIOS: PARA API
+https://axios-http.com/ptbr/docs/intro
+
+BIBLIOTECA AXIOS:
+yarn add axios
+=================================================

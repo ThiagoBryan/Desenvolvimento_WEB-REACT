@@ -1,3 +1,4 @@
+//import { Button } from "@mui/material"; // import do material UI
 import { useState } from "react";
 import { Container } from "../../Styles"; // import da classe Styles.jsx
 import { BotaoAumentar, BotaoDiminuir, BotaoZerar, Titulo } from "./Styles";
@@ -42,7 +43,8 @@ const Contador = () => {
       <Texto valor={numero} />
       {erroDiminuir && <MensagemErro>Não é possível diminuir</MensagemErro>}
       <BotaoDiminuir onClick={() => diminuirValor()}>Diminuir</BotaoDiminuir>
-      <BotaoZerar onClick={() => zerarValor()}>Zerar</BotaoZerar>
+      <BotaoZerar onClick={() => zerarValor()} variant="contained" 
+      disabled={numero === 0}>Zerar</BotaoZerar> {/** disabled: Botao fica desativado quando nao for 0 */}
     </Container>
   );
 };

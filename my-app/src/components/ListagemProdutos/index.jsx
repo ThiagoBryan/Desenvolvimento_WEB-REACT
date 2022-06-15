@@ -1,4 +1,4 @@
-import Produto from "../Produto";
+//import Produto from "../Produto";
 import styled from 'styled-components';
 
 const Container = styled.div`

@@ -7,7 +7,7 @@ import Produto from "../Produto";
 function Corpo() {
   const produtos = [
     {
-      nome: "PS5 &#38; PS4",
+      nome: "PS5 & PS4",
       valor: 8000,
       imagem:
         "https://blog.br.playstation.com/tachyon/sites/4/2022/03/0158db50165bceb8b7a13f632de7f54d9ccd0c7c.jpg?resize=1088%2C612&crop_strategy=smart&zoom=1.5",
