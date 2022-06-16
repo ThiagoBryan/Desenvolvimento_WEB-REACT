@@ -24,4 +24,17 @@ https://axios-http.com/ptbr/docs/intro
 
 BIBLIOTECA AXIOS:
 yarn add axios
-=================================================
+======================================================
+SITE ANIMAÇÕES: LOTTIE
+https://lottiefiles.com/blog/working-with-lottie/how-to-use-lottie-in-react-app
+https://yarnpkg.com/package/react-lottie
+https://lottiefiles.com/featured
+
+BIBLIOTECA:Lottiefiles Logo
+yarn add react-lottie
+
+=======================================================
+SITE Renderização condicional:
+https://pt-br.reactjs.org/docs/conditional-rendering.html
+==========================================================
+https://www.robinwieruch.de/react-router-nested-routes/

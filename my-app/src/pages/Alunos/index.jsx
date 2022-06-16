@@ -14,74 +14,118 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Container from "@mui/material/Container";
 import axios from "axios"; //API
+import { useEffect, useState } from "react";
+import Lottie from "react-lottie";
+import carregandoAnimacao from "../../animations/loading.json";
+import { Link } from "react-router-dom"; // import link
+import { MyLink } from "../../Styles";
 
 const Alunos = () => {
-  const alunos = [
-    {
-      nome: "Thiago",
-      idade: 29,
-      id: 1,
-    },
-    {
-      nome: "Tata",
-      idade: 26,
-      id: 2,
-    },
-  ];
+  const [alunos, setAlunos] = useState([]);
+  const [carregando, setCarregando] = useState(true);
 
-  //API                                      .then(results) => pega todos os dados                 
-  axios.get("https://randomuser.me/api/?results=5").then(({data}) => {
-    console.log(data.results)
-  });
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: carregandoAnimacao,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  //Imutabilidade
+  //alunos1 -> []
+  //alunos2 -> [{}]
+  //alunos3 -> {}
+
+  //API
+  //GET - PEGAR UMA INFORMAÇÃO
+  //POST - CADASTRA/CRIA UMA INFORMAÇÃO
+  //PUT - ALTERAR/EDITA UMA INFORMAÇÃO
+  //DELETE - DELETAR UMA INFORMAÇÃO
+
+  useEffect(() => {
+                                                //  .then(results) => pega todos os dados
+    axios.get("https://randomuser.me/api/?results=5").then(({ data }) => {
+      setAlunos(data.results);
+    });
+  }, []); //[] Construtor, quando o useEffect funcionar ele executa
+
+  useEffect(() => {
+    if (alunos.length > 0) {
+      setTimeout(() => {
+        //timeout
+        setCarregando(false);
+      }, 800); //timeout
+    }
+  }, [alunos]);
 
   return (
     <>
       {/*NAVBAR */}
-      <Box sx={{ flexGrow: 1 }}>  {/*sx={{background:'#ff5555'}} = cor da NAVBAR */}
-        <AppBar position="static" sx={{background:'#ff5555'}}>
+      <Box sx={{ flexGrow: 1 }}>
+        {" "}
+        {/*sx={{background:'#ff5555'}} = cor da NAVBAR */}
+        <AppBar position="static" sx={{ background: "#ff5555" }}>
           <Toolbar>
             <IconButton
               size="large"
               edge="start"
               color="inherit"
               aria-label="menu"
-              sx={{ mr: 2 }}
+              sx={{ mr: 20 }}
             >
               <MenuIcon />
+             
+              <Button color="inherit">
+              <MyLink to="/materias/listagem">Listagem</MyLink>
+              </Button>
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               News
             </Typography>
-            <Button color="inherit">Login</Button>
+            <Button color="inherit">
+              <MyLink to="/materias/cadastro">Cadastro</MyLink> {/* para criar link */}
+            </Button>
           </Toolbar>
         </AppBar>
       </Box>
 
       <Container maxWidth="sm">
-        {/*TABELA */}                    {/*sx={{mt:3}} => margin-top */}
-        <TableContainer component={Paper} sx={{mt:3}}>
-          <Table size="small" aria-label="a dense table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="right">ID</TableCell>
-                <TableCell align="right">Nome</TableCell>
-                <TableCell align="right">Idade</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {alunos.map((aluno) => (
-                <TableRow
-                  key={aluno.id}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                >
-                  <TableCell align="right">{aluno.id}</TableCell>
-                  <TableCell align="right">{aluno.nome}</TableCell>
-                  <TableCell align="right">{aluno.idade}</TableCell>
+        {carregando ? ( // se carregando for true(?)
+          <Lottie // animação de loading
+            options={defaultOptions} //executa o Carregando
+            height={400}
+            width={400}
+            speed={2} //velocidade de rotação
+          />
+        ) : (
+          //se for false(:) executa;
+          //TABELA                    *sx={{mt:3}} => margin-top
+          <TableContainer component={Paper} sx={{ mt: 3 }}>
+            <Table size="small" aria-label="a dense table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="right">ID</TableCell>
+                  <TableCell align="right">Nome</TableCell>
+                  <TableCell align="right">Idade</TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+              </TableHead>
+              <TableBody>
+                {alunos.map((aluno) => (
+                  <TableRow
+                    key={aluno.id.value}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
+                    <TableCell align="right">{aluno.id.value}</TableCell>
+                    <TableCell align="right">{aluno.name.first}</TableCell>
+                    <TableCell align="right">{aluno.dob.age}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        )}
       </Container>
     </>
   );

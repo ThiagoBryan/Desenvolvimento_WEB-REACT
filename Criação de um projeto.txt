@@ -1,0 +1,7 @@
+NO TERMINAL:
+1->  npx create-react-app nome-do-projeto
+
+DENTRO DA PASTA DO PROJETO QUE FOI CRIADA:
+cd nome-do-projeto (PARA IR PARA A PASTA DO PROJETO);
+2-> npm start
+
