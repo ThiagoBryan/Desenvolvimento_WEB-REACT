@@ -17,8 +17,7 @@ import axios from "axios"; //API
 import { useEffect, useState } from "react";
 import Lottie from "react-lottie";
 import carregandoAnimacao from "../../animations/loading.json";
-import { Link } from "react-router-dom"; // import link
-import { MyLink } from "../../Styles";
+import { MyLink } from "../../Styles";  // import link
 
 const Alunos = () => {
   const [alunos, setAlunos] = useState([]);
@@ -75,7 +74,7 @@ const Alunos = () => {
               aria-label="menu"
               sx={{ mr: 20 }}
             >
-              <MenuIcon />
+              {/* <MenuIcon /> */}
              
               <Button color="inherit">
               <MyLink to="/materias/listagem">Listagem</MyLink>
