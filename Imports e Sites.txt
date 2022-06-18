@@ -38,3 +38,7 @@ SITE Renderização condicional:
 https://pt-br.reactjs.org/docs/conditional-rendering.html
 ==========================================================
 https://www.robinwieruch.de/react-router-nested-routes/
+=============================================================
+API CONTEXT:
+https://pt-br.reactjs.org/docs/context.html
+===============================================================
