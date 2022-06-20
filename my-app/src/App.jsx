@@ -12,10 +12,12 @@ function App() {
   const {temaSelecionado} = useContext(TemaContext);
   const tema = {
     claro: {
-      backgroundColor: '#fff'
+      backgroundColor: '#ebe1e1',
+      color: "#363535 " 
     },
     escuro : {
-      backgroundColor: '#363535'
+      backgroundColor: '#363535',
+      color: "#ebe1e1"
     }
   } 
   

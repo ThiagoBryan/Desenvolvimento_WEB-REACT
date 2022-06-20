@@ -1,8 +1,14 @@
 .container {
     margin: 0;
     padding: 0;
+    min-height: 100vh; /*VERTICAL HEIGHT*/
 }
 
 body {
     margin: 0;
+    
+}
+
+html ,body {
+    height: 100%; /*PARA O TEMA ESCURO PEGAR A PAGINA TODA MESMO COM BARRRA DE ROLAGEM*/
 }

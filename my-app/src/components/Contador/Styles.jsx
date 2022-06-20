@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 export const Titulo = styled.h3`
   font-size: 20px ;
   font-family: sans-serif;
-  color: #5c0fa4;
+  /* color: #5c0fa4; */
 `;
 
 export const BotaoAumentar = styled.button`

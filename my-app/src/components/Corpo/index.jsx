@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { TemaContext } from "../../context";
 import Contador from "../Contador";
 import Formulario from "../Formulario";
 import Lista from "../Lista";
@@ -5,6 +7,8 @@ import ListagemProdutos from "../ListagemProdutos";
 import Produto from "../Produto";
 
 function Corpo() {
+const { temaSelecionado } = useContext(TemaContext);
+
   const produtos = [
     {
       nome: "PS5 & PS4",
@@ -26,16 +30,27 @@ function Corpo() {
     },
   ];
 
+  const tema = {
+    claro: {
+      backgroundColor: '#c20303',
+      color: "#e9d7d7 " 
+    },
+    escuro : {
+      backgroundColor: '#050505',
+      color: "#641616"
+    }
+  } 
+
   return (
     <div>
       <Contador />
       <Formulario />
-      <Lista>
+      <ul style={tema[temaSelecionado]} >
         <Lista.Item conteudo="Paraguai" />
         <Lista.Item conteudo="Uruguai" />
         <Lista.Item conteudo="Argentina" />
         <Lista.Item conteudo="Venezuela" />
-      </Lista>
+      </ul>
 
       <ListagemProdutos>
         {produtos.map((produto) => {
