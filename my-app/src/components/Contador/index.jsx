@@ -6,7 +6,7 @@ import { MensagemErro } from "./Styles";
 
 
 const Contador = () => {
-  //começa com use é HULK
+  //começa com use é HooK
   const [numero, setNumero] = useState(1); // criação de estado
   //altera valor   //(1) estado inicial
 
